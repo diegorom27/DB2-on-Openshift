@@ -1,9 +1,9 @@
 # Documentación de Configuración para DB2 en OpenShift
 
-###Antes de empezar
+### Antes de empezar
 
--Revisar que exista el storageClass referenciado en la PVC.
--Anadir al storageClass usado la sgt configuracion:
+Revisar que exista el storageClass referenciado en la PVC.
+Añade al storageClass usado la sgt configuracion:
 ```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
