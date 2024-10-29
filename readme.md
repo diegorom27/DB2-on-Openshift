@@ -56,7 +56,8 @@ Entrar al pod del db2 por la consola de openshift
 su - db2inst1
 
 db2
-
+```
+```db2
 CONNECT TO testdb
 
 CREATE TABLE employees(id INT PRIMARY KEY NOT NULL, name VARCHAR(50), salary DECIMAL(10, 2))
