@@ -41,10 +41,16 @@ spec:
           volumeMounts:
             - mountPath: /database
               name: db2-storage
+            - mountPath: /backup
+              name: s3-backup-storage
           securityContext:
+            fsGroup: 0
             runAsNonRoot: false
             privileged: true
       volumes:
         - name: db2-storage
           persistentVolumeClaim:
             claimName: pvc-db2-4
+        - name: s3-backup-storage
+          persistentVolumeClaim:
+            claimName: test-cos
