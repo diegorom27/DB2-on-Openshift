@@ -37,6 +37,11 @@ oc create rolebinding db2-sa-scc-binding \
 --serviceaccount=db2-test-5:db2-sa \
 --namespace=db2-test-5
 ```
+### Troubleshooting
+Para evitar problemas con el security context en deployment.
+```bash
+oc adm policy add-scc-to-user privileged -z db2-sa -n db2-test-5
+```
 ###  Crear pvc
 Aplica la configuración de PVC desde el archivo pvc.yaml.
 ```bash
