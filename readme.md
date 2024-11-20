@@ -38,7 +38,7 @@ oc create rolebinding db2-sa-scc-binding \
 --namespace=db2-test-5
 ```
 ### Troubleshooting
-Para evitar problemas con el security context en deployment.
+Este comando evita problemas con el security context con privilege en el deployment.
 ```bash
 oc adm policy add-scc-to-user privileged -z db2-sa -n db2-test-5
 ```
