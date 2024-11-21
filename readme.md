@@ -142,7 +142,7 @@ Para realizar backup's de aplicativos que tengan persistent volume es necesario 
 ![image](https://github.com/user-attachments/assets/14da9cd0-f903-41b4-912b-87de38982cba)
 
 
-### Intalar Kasten 
+### Instalar Kasten 
 Sigue el instructivo hasta la configuración del location profile. [Manual de instalación Kasten](https://github.com/emeloibmco/Red-Hat-Open-Shift-Kasten-Backup)
 
 ### Creación y ejecución de una política de Backup
