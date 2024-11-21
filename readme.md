@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b1619d0f-fc35-4b59-b29c-0900ba656178)# Documentación de Configuración para DB2 en OpenShift
+# Documentación de Configuración para DB2 en OpenShift
 
 ## Pre-Requisitos :pencil:
 - Contar con un clúster de Openshift en [IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift&catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9Y29udGFpbmVycw%3D%3D)
