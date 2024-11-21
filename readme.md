@@ -137,7 +137,7 @@ db2move <db name> EXPORT
 ## Backup con Kasten
 
 ### Ajuste pre-instalacion
-Para realizar backup's de aplicativos que tengan persistent volume es necesario anadir este anotacion el YAML del VolumeSnapshotClass que se va a utilizar.
+Para realizar backup's de aplicativos que tengan persistent volume es necesario anadir esta anotacion al YAML del VolumeSnapshotClass que se va a utilizar.
 
 ![image](https://github.com/user-attachments/assets/14da9cd0-f903-41b4-912b-87de38982cba)
 
