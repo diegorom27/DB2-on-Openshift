@@ -1,4 +1,8 @@
-# Documentación de Configuración para DB2 en OpenShift
+![image](https://github.com/user-attachments/assets/b1619d0f-fc35-4b59-b29c-0900ba656178)# Documentación de Configuración para DB2 en OpenShift
+
+## Pre-Requisitos :pencil:
+- Contar con un clúster de Openshift en [IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift&catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9Y29udGFpbmVycw%3D%3D)
+- Contar con una instancia de [IBM Cloud Object Storage](https://cloud.ibm.com/objectstorage/create)
 
 ## Instalacion DB2
 
@@ -129,6 +133,28 @@ cd /backup #backup el directorio perteneciente al cos especificado en el yaml de
 db2move <db name> EXPORT
 
 ```
+
+## Backup con Kasten
+
+### Ajuste pre-instalacion
+Para realizar backup's de aplicativos que tengan persistent volume es necesario anadir este anotacion el YAML del VolumeSnapshotClass que se va a utilizar.
+
+![image](https://github.com/user-attachments/assets/14da9cd0-f903-41b4-912b-87de38982cba)
+
+
+### Intalar Kasten 
+Sigue el instructivo hasta la configuración del location profile. [Manual de instalación Kasten](https://github.com/emeloibmco/Red-Hat-Open-Shift-Kasten-Backup)
+
+### Creación y ejecución de una política de Backup
+Se debe crear una policy con la siguiente configuracion, para tomar configuraciones necesarias para el DB2 que pueden no estar en el namespace.
+![image](https://github.com/user-attachments/assets/5f923a1a-5e1e-429b-b138-1cfdb78e3350)
+
+### Configuracion de política de restauración de Backup
+
+![image](https://github.com/user-attachments/assets/9d17d2cd-4226-4163-84a0-c358240e4141)
+
+
+## Referencias
 
 ### Documentacion img
 
