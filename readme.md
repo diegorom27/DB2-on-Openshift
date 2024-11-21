@@ -152,7 +152,7 @@ Se debe crear una policy con la siguiente configuracion, para tomar configuracio
 
 ### Configuracion de política de restauración de Backup
 
-Sigue el instructivo para la configuración del politica de import. [Manual de instalación Kasten](https://github.com/emeloibmco/Red-Hat-Open-Shift-Kasten-Backup)
+Sigue el instructivo para la configuración de la política de import. [Manual de instalación Kasten](https://github.com/emeloibmco/Red-Hat-Open-Shift-Kasten-Backup)
 
 ## Referencias
 
