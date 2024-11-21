@@ -147,6 +147,7 @@ Sigue el instructivo hasta la configuración del location profile. [Manual de in
 
 ### Creación y ejecución de una política de Backup
 Se debe crear una policy con la siguiente configuracion, para tomar configuraciones necesarias para el DB2 que pueden no estar en el namespace.
+
 ![image](https://github.com/user-attachments/assets/5f923a1a-5e1e-429b-b138-1cfdb78e3350)
 
 ### Configuracion de política de restauración de Backup
