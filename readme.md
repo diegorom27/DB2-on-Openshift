@@ -22,7 +22,7 @@ mountOptions:
 ### Crear namespace
 Crea un nuevo proyecto (namespace) para la implementación de DB2.
 ```bash
-oc new-project db2-test-5
+oc new-project db2-test-6
 ```
 ### Crear scc
 Aplica la configuración de SCC desde el archivo scc.yml.
@@ -32,19 +32,19 @@ oc apply -f scc.yml
 ### Crear service account
 Crea una cuenta de servicio necesaria para el acceso a los recursos.
 ```bash
-oc create serviceaccount db2-sa -n db2-test-5
+oc create serviceaccount db2-sa -n db2-test-6
 ```
 ### Realizar binding entre scc y service account
 ```bash
 oc create rolebinding db2-sa-scc-binding \
 --clusterrole=system:openshift:scc:db2u-scc \
---serviceaccount=db2-test-5:db2-sa \
---namespace=db2-test-5
+--serviceaccount=db2-test-6:db2-sa \
+--namespace=db2-test-6
 ```
 ### Troubleshooting - securityContext.privileged: true
 Para evitar el error es necesario ejecutar el siguiente comando.
 ```bash
-oc adm policy add-scc-to-user privileged -z db2-sa -n db2-test-5
+oc adm policy add-scc-to-user privileged -z db2-sa -n db2-test-6
 ```
 ###  Crear pvc
 Aplica la configuración de PVC desde el archivo pvc.yaml.
@@ -59,7 +59,7 @@ oc apply -f deployment.yaml
 ### Verifica service account en los pods
 Revisa la configuración de la cuenta de servicio en los pods existentes.
 ```bash
-oc describe pod <pod-name> -n db2-test-5
+oc describe pod <pod-name> -n db2-test-6
 ```
 ### Login
 Entrar al pod del db2 por la consola de openshift
@@ -87,13 +87,18 @@ SELECT * FROM employees
 
 ```shell
 
-oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
+oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key> --from-literal=res-conf-apikey=<apikey>  
 
 ```
 
 ### Instalar plugin cos 
 
 Seguir el siguiente [instructivo](https://cloud.ibm.com/docs/openshift?topic=openshift-storage_cos_install)
+
+Nota: Es importante que es uses el siguiente comando de instalacion para el plugin 
+```shell
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true --set quotaLimit=true --set bucketAccessPolicy=false --set allowCrossNsSecret=true
+```
 
 ### Crear pvc para el cos
 
@@ -126,11 +131,11 @@ Entrar al cli del pod
 
 ```shell
 
-su -db2inst1
+su db2inst1
 
 cd /backup #backup el directorio perteneciente al cos especificado en el yaml del deployment
 
-db2move <db name> EXPORT
+db2move testdb EXPORT
 
 ```
 

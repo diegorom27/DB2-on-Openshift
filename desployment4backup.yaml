@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db2-test-deployment-4
-  namespace: db2-test-5
+  name: db2-test-deployment-6
+  namespace: db2-test-6
   labels:
-    app: db2-test-5
+    app: db2-test-6
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db2-test-5
+      app: db2-test-6
   template:
     metadata:
       labels:
-        app: db2-test-5
+        app: db2-test-6
     spec:
       serviceAccountName: db2-sa
       containers:
@@ -50,7 +50,7 @@ spec:
       volumes:
         - name: db2-storage
           persistentVolumeClaim:
-            claimName: pvc-db2-4
+            claimName: pvc-db2-6
         - name: s3-backup-storage
           persistentVolumeClaim:
             claimName: test-cos

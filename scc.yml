@@ -3,7 +3,7 @@ apiVersion: security.openshift.io/v1
 apiGroup: security.openshift.io
 metadata:
     name: db2u-scc
-    namespace: db2-test-5
+    namespace: db2-test-6
 allowHostDirVolumePlugin: false
 allowHostIPC: false
 allowHostNetwork: false
